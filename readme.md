@@ -1,9 +1,10 @@
 ---
 title: SQL Setup, Insert, Update, and Delete
 type: lesson
-duration: "1:25"
+duration: "2:20"
 creator:
     name: Jay Nappy
+    modified by: Jonathan Ahrens (Taka)
     city: NYC
 competencies: Databases
 ---
@@ -13,19 +14,22 @@ competencies: Databases
 ### Objectives
 *After this lesson, students will be able to:*
 
-- Create a database table
-- Insert, retrieve, update, and delete a row or rows into a database table
+- [ ] Interact with the PSQL command line
+- [ ] Create and DELETE a database
+- [ ] Create and DELETE a table
+- [ ] Insert, retrieve, update, and delete a row or rows into a database table
 
 ### Preparation
 *Before this lesson, students should already be able to:*
 
-- Install **[PostgreSQL](http://www.postgresql.org/)**
-- Describe the relationship between tables, rows, and columns
-- Draw an ERD diagram
-- Explain the difference between table relationships
+- [x] Install **[PostgreSQL](http://www.postgresql.org/)**
+- [x] Describe the relationship between tables, rows, and columns
 
+## Intro: What are Databases
+Repositories to store information.
+Go to slideshow...
 
-## We know about Databases, but what is SQL? Intro (10 mins)
+## Ok, so we know about Databases, but what is SQL? Intro (10 mins)
 
 Let's review: at it's simplest, a relational database is a mechanism to store and retrieve data in a tabular form.  Spreadsheets are a good analogy!  But how do we interact with our database: inserting data, updating data, retrieving data, and deleting data? That's where SQL comes in!
 
@@ -52,7 +56,7 @@ Well, a database is just a repository to store the data and you need to use syst
 ...and all of these management systems use SQL (or some adaptation of it) as a language to manage data in the system.
 
 
-## Connect, Create a Database - Codealong (10 mins)
+## Connect, Create a Database - Codealong (20 mins)
 
 Let's make a database!  First, make sure you have PostgreSQL running.  Once you do, open your terminal and type:
 
@@ -66,7 +70,13 @@ You should see something like:
 your_user_name=#
 ```
 
-Great! You've entered the PostgreSQL equivalent of IRB: now, you can execute PSQL commands, or PostgreSQL's version of SQL.
+To exit the psql CLI you can:
+```bash
+your_user_name=# \q
+```
+> Or you can ctrl+c out of it.  
+
+Great! You've entered the PostgreSQL command line: now, you can execute PSQL commands, or PostgreSQL's version of SQL.
 
 Let's use these commands, but before we can, we must create a database.  Let's call it wdi:
 
@@ -76,6 +86,24 @@ CREATE DATABASE
 ```
 
 The semicolon is important! Be sure to always end your SQL queries and commands with semicolons.
+
+To delete the Database:
+```bash
+your_user_name=# DROP DATABASE wdi;
+```
+
+Let's list the Databases we have in psql
+```psql
+your_user_name=# \l
+                                 List of databases
+      Name      | Owner | Encoding |   Collate   |    Ctype    | Access privileges
+----------------+-------+----------+-------------+-------------+-------------------
+ debug_politics | taka  | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ hogs           | taka  | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ hogwarts_crud  | taka  | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ iparkmyself    | taka  | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ moviehaus_db   | taka  | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+```
 
 Now let's _use_ that database we just created:
 
@@ -130,6 +158,8 @@ wdi(#  name      TEXT                NOT NULL,
 
 ...then, each line after denotes a new column we're going to create for this table, what the column will be called, the data type, whether it's a primary key, and whether the database - when data is added - can allow data without missing values.  In this case, we're not allowing `name`, `instructor_id` to be blank; but we're ok with `website` being blank.
 
+> Read up on PSQL datatypes [here](https://www.postgresql.org/docs/10/static/datatype.html)  
+
 ## Create a student table and insert data - Codealong (10 mins)
 
 Now that we're keeping track of our instructors, let's create a table for students that collects information about:
@@ -183,7 +213,7 @@ wdi=# INSERT INTO students VALUES (DEFAULT, 'Jack Sparrow', 28, '50 Main St, New
 INSERT 0 1
 ```
 
-## Insert Data - Independent Practice (10 mins)
+## Insert Data - Independent Practice (15 mins)
 
 Now, you try it for the other students, and pay attention to the order of Jack's parameters and the single quotes - they both matter.
 
@@ -214,6 +244,7 @@ wdi=# INSERT INTO students VALUES (DEFAULT, 'Slaggy McRaggy', 28);
 INSERT 0 1
 ```
 
+## BREAK!
 
 ## What's in our database? Code Along -  (15 mins)
 
@@ -359,7 +390,7 @@ wdi=# SELECT * FROM students;
 
 ```
 
-## Independent Practice - 10 mins
+## Independent Practice - 15 mins
 
 There's _no way_ you're going to remember the exact syntax of everything we just did, but let's practice a habit you should have been doing since week 1: finding and reading documentation. Checkout [this PostgreSQL tutorial](http://www.tutorialspoint.com/postgresql/) and using the same database and datatable of users, get through a many of these SQL challenges as possible in the next 10 minutes:
 
@@ -377,38 +408,19 @@ There's _no way_ you're going to remember the exact syntax of everything we just
 
 ## Conclusion - 5 minutes
 
-When we finally hook our apps up to databases - especially with Rails - we will have a whole slew of shortcuts we can use to get the data we need? So, wait, why the heck are we practicing SQL?  Well, let's look at what happens when you call for a particular user from a users table - with some nifty methods - in a Rails environment when you're connected to a database:
-
-```ruby  
-User.last
-  User Load (1.5ms)  SELECT  "users".* FROM "users"   ORDER BY "users"."id" DESC LIMIT 1
-=> #<User id: 1, first_name: "jay", last_name: "nappy"...rest of object >
-```
-
-There's SQL!!!
-
-```SQL
-SELECT  "users".* FROM "users"   ORDER BY "users"."id" DESC LIMIT 1
-```
-
-The Ruby/Rails scripts get converted to raw SQL before querying the database.  You'll know the underlying concepts and query language for how the data you ask for gets returned to you.
+We will learn later on to relate our DB usage into Backend services. 
+SQL gives us a fast and reliable way to access data in our full stack services
 
 #### Common Postgresql Commands
 
 Here are a list of some common Postgresql commands that you might need:
 
 - `\c` - connect to database
-- `\l`
-- `\d`
-- `\d+`
-- `\q`
+- `\l` - list all DBs
+- `\d` - list details
+- `\d+` - details of this table
+- `\q` - exit psql
 - `\h` - help
-
-
-Answer these questions:
-
-- How does SQL relate to relational databases?
-- What kinds of boolean and conditional operators can we use in SQL?
 
 
 
