@@ -22,7 +22,7 @@ competencies: Databases
 ### Preparation
 *Before this lesson, students should already be able to:*
 
-- [x] Install **[PostgreSQL](http://www.postgresql.org/)**
+- [x] `brew install postgresql`
 - [x] Describe the relationship between tables, rows, and columns
 
 ## Intro: What are Databases
@@ -74,7 +74,7 @@ To exit the psql CLI you can:
 ```bash
 your_user_name=# \q
 ```
-> Or you can ctrl+c out of it.  
+> Or you can <kbd>ctrl</kbd>+<kbd>d</kbd> out of it.  
 
 Great! You've entered the PostgreSQL command line: now, you can execute PSQL commands, or PostgreSQL's version of SQL.
 
@@ -408,10 +408,19 @@ There's _no way_ you're going to remember the exact syntax of everything we just
 
 ## Conclusion - 5 minutes
 
-We will learn later on to relate our DB usage into Backend services. 
-SQL gives us a fast and reliable way to access data in our full stack services
+We will learn later on to relate our DB usage into backend services. 
+SQL gives us a fast and reliable way to access data in a structured and logical way.
 
-#### Common Postgresql Commands
+---
+
+# Resources
+
+## Further Reading
+1. [www.sqlstyle.guide](http://www.sqlstyle.guide)
+2. [PostgreSQL tutorial](http://www.tutorialspoint.com/postgresql/)
+3. [PSQL datatypes](https://www.postgresql.org/docs/10/static/datatype.html)  
+
+## Common Postgresql Commands
 
 Here are a list of some common Postgresql commands that you might need:
 
@@ -421,6 +430,5 @@ Here are a list of some common Postgresql commands that you might need:
 - `\d+` - details of this table
 - `\q` - exit psql
 - `\h` - help
-
 
 
