@@ -25,9 +25,21 @@ competencies: Databases
 - [x] `brew install postgresql`
 - [x] Describe the relationship between tables, rows, and columns
 
-## Intro: What are Databases
-Repositories to store information.
-Go to slideshow...
+## What are Databases? - Intro (20 mins)
+
+A database is a place where information gets stored in a hard drive - or distributed across multiple hard drives - on a computer somewhere. Much like we've been creating and storing data, here and there, a database represents a collection of individual pieces of data stored in a highly structured and searchable way; they are able to represent a model of reality.
+
+Inside a database, we do basic actions like create, read, update, and destroy data – these operataions are comonly refered to by the acronym CRUD and are essential to modern web development.
+
+In modern web development, there are different categories of databases primarily SQL and NoSQL. We're focusing on SQL becuase it's a more general and robust solution.
+
+SQL stands for Structured Query Language, and it's a language used to manage and get information from what are considered "relational" databases.
+
+Wikipedia on relational databses:
+>This model organizes data into one or more tables (or "relations") of columns and rows, with a unique key identifying each row. Rows are also called records or tuples.[3] Columns are also called attributes. Generally, each table/relation represents one "entity type" (such as customer or product). The rows represent instances of that type of entity (such as "Lee" or "chair") and the columns representing values attributed to that instance (such as address or price). -[wikipedia](https://en.wikipedia.org/wiki/Relational_database)
+
+
+![relational db](https://cloud.githubusercontent.com/assets/25366/8589355/2646c588-25ca-11e5-9f2d-3d3afe8b7817.png)
 
 ## Ok, so we know about Databases, but what is SQL? Intro (10 mins)
 
@@ -119,7 +131,7 @@ Now that we have a database, let's create a table (think of this like, "hey now 
 
 #### SQL style guide (see http://www.sqlstyle.guide)
 1. Fields should *always* be lowercase
-2. SQL _keywords_ should always be CAPS 
+2. SQL _keywords_ SHOULD ALWAYS BE IN CAPS 
 2. Never name a field `id`; always correlate it to the table name (e.g. `student_id`).
 3. Always check your company's style guide, or follow the convention; never create your own style.
 
@@ -289,7 +301,7 @@ wdi=# SELECT name, age FROM students;
 
 #### Getting more specific
 
-Just like Ruby or JavaScript, all of our comparison and boolean operators can do work for us to select more specific data.
+Just like JavaScript, all of our comparison and boolean operators can do work for us to select more specific data.
 
 - I want the names of all the students who aren't dinosaurs - done:
 
@@ -350,7 +362,7 @@ wdi=# SELECT * FROM students WHERE address LIKE '%Fivetowns%';
 Ok, there are some mistakes we've made to our database, but that's cool, cause we can totally update it or delete information we don't like. Let's start by adding one more student:
 
 ```psql
-wdi=# INSERT INTO students VALUES (6, 'Miss Take', 500, 'asdfasdfasdf');
+wdi=# INSERT INTO students VALUES (DEFAULT, 'Miss Take', 500, 'asdfasdfasdf');
 INSERT 0 1
 ```
 
@@ -392,7 +404,7 @@ wdi=# SELECT * FROM students;
 
 ## Independent Practice - 15 mins
 
-There's _no way_ you're going to remember the exact syntax of everything we just did, but let's practice a habit you should have been doing since week 1: finding and reading documentation. Checkout [this PostgreSQL tutorial](http://www.tutorialspoint.com/postgresql/) and using the same database and datatable of users, get through a many of these SQL challenges as possible in the next 10 minutes:
+Using the same database from above, get through as many of these SQL challenges as you can.
 
 - Insert five more students:
   - Nancy Gong is 40 and lives at 200 Horton Ave., Lynbrook, NY
