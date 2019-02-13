@@ -1,13 +1,4 @@
----
-title: SQL Setup, Insert, Update, and Delete
-type: lesson
-duration: "2:20"
-creator:
-    name: Jay Nappy
-    modified by: Jonathan Ahrens (Taka)
-    city: NYC
-competencies: Databases
----
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)  WEB DEVELOPMENT IMMERSIVE
 
 # SQL Setup, Insert, Update and Delete
 
