@@ -216,7 +216,7 @@ wdi=# INSERT INTO students VALUES (DEFAULT, 'Jack Sparrow', 28, '50 Main St, New
 INSERT 0 1
 ```
 
-## Insert Data - Independent Practice
+## Insert Data
 
 Now, you try it for the other students, and pay attention to the order of Jack's parameters and the single quotes - they both matter.
 
@@ -246,8 +246,6 @@ INSERT 0 1
 wdi=# INSERT INTO students VALUES (DEFAULT, 'Slaggy McRaggy', 28);
 INSERT 0 1
 ```
-
-## BREAK!
 
 ## What's in our database?
 
@@ -393,7 +391,7 @@ wdi=# SELECT * FROM students;
 
 ```
 
-## Independent Practice
+## Practice
 
 Using the same database from above, get through as many of these SQL challenges as you can.
 
