@@ -20,7 +20,7 @@
 
 A database is a place where information gets stored in a hard drive - or distributed across multiple hard drives - on a computer somewhere. Much like we've been creating and storing data, here and there, a database represents a collection of individual pieces of data stored in a highly structured and searchable way; they are able to represent a model of reality.
 
-Inside a database, we do basic actions like create, read, update, and destroy data – these operataions are comonly refered to by the acronym CRUD and are essential to modern web development.
+Inside a database, we do basic actions like create, read, update, and destroy data – these operataions are commonly refered to by the acronym CRUD and are essential to modern web development.
 
 In modern web development, there are different categories of databases primarily SQL and NoSQL. We're focusing on SQL becuase it's a more general and robust solution.
 
