@@ -17,7 +17,7 @@
 - [x] `brew install postgresql`
 - [x] Describe the relationship between tables, rows, and columns
 
-## What are Databases? - Intro (20 mins)
+## What are Databases?
 
 A database is a place where information gets stored in a hard drive - or distributed across multiple hard drives - on a computer somewhere. Much like we've been creating and storing data, here and there, a database represents a collection of individual pieces of data stored in a highly structured and searchable way; they are able to represent a model of reality.
 
@@ -37,7 +37,7 @@ Wikipedia on relational databases:
 
 An attribute may also be referred to as a field.  Field can also indicate a specific cell in a table (a specific attribute of a specific record).
 
-## Ok, so we know about Databases, but what is SQL? Intro (10 mins)
+## Ok, so we know about Databases, but what is SQL?
 
 Let's review: at its simplest, a relational database is a mechanism to store and retrieve data in a tabular form.  Spreadsheets are a good analogy!  But how do we interact with our database: inserting data, updating data, retrieving data, and deleting data? That's where SQL comes in!
 
@@ -64,7 +64,7 @@ Well, a database is just a repository to store the data and you need to use syst
 ...and all of these management systems use SQL (or some adaptation of it) as a language to manage data in the system.
 
 
-## Connect, Create a Database - Codealong (20 mins)
+## Connect, Create a Database - Codealong
 
 Let's make a database!  First, make sure you have PostgreSQL running.  Once you do, open your terminal and type:
 
@@ -121,7 +121,7 @@ You are now connected to database "sei" as user "your_user_name".
 sei=#
 ```
 
-## Create a table - Demo (10 mins)
+## Create a table - Demo
 
 Now that we have a database, let's create a table (think of this like, "hey now that we have a workbook/worksheet, let's block off these cells with a border and labels to show it's a unique set of values"):
 
@@ -168,7 +168,7 @@ sei(#  name      TEXT                NOT NULL,
 
 > Read up on PSQL datatypes [here](https://www.postgresql.org/docs/10/static/datatype.html)  
 
-## Create a student table and insert data - Codealong (10 mins)
+## Create a student table and insert data - Codealong
 
 Now that we're keeping track of our instructors, let's create a table for students that collects information about:
 
@@ -224,7 +224,7 @@ sei=# INSERT INTO students VALUES (DEFAULT, 'Jack Sparrow', 28, '50 Main St, New
 INSERT 0 1
 ```
 
-## Insert Data - Independent Practice (15 mins)
+## Insert Data - Independent Practice
 
 Now, you try it for the other students, and pay attention to the order of Jack's parameters and the single quotes - they both matter.
 
@@ -257,7 +257,7 @@ INSERT 0 1
 
 ## BREAK!
 
-## What's in our database? Code Along -  (15 mins)
+## What's in our database?
 
 So now that we have this data saved, we're going to need to access it at some point, right?  We're going to want to _select_ particular data points in our dataset provided certain conditions.  The PostgreSQL SELECT statement is used to fetch the data from a database table which returns data in the form of result table. These result tables are called result-sets. The syntax is just what you would have guessed:
 
@@ -356,7 +356,7 @@ sei=# SELECT * FROM students WHERE address LIKE '%Fivetowns%';
 
 
 
-## Updates to our database - Codealong (5 mins)
+## Updates to our database
 
 Ok, there are some mistakes we've made to our database, but that's cool, cause we can totally update it or delete information we don't like. Let's start by adding one more student:
 
@@ -401,7 +401,7 @@ sei=# SELECT * FROM students;
 
 ```
 
-## Independent Practice - 15 mins
+## Independent Practice
 
 Using the same database from above, get through as many of these SQL challenges as you can.
 
@@ -446,8 +446,7 @@ Here are a list of some common Postgresql commands that you might need:
 - `\l` - list all DBs
 - `\d` - list all tables in current database
 - `\d` - list details
-- `\d+` - details of this table
 - `\q` - exit psql
 - `\h` - help
 
-##### [Postrges Cheetsheet](https://gist.github.com/apolloclark/ea5466d5929e63043dcf)
+##### [Postgres Cheetsheet](https://gist.github.com/apolloclark/ea5466d5929e63043dcf)
