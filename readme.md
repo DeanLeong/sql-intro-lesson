@@ -1,25 +1,15 @@
----
-title: SQL Setup, Insert, Update, and Delete
-type: lesson
-duration: "2:20"
-creator:
-    name: Jay Nappy
-    modified by: Jonathan Ahrens (Taka)
-    modified by: Steve VW
-    city: NYC
-competencies: Databases
----
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)  SOFTWARE ENGINEERING IMMERSIVE
 
-# SQL Setup, Insert, Update and Delete
+# SQL
 
 ### Objectives
 *After this lesson, students will be able to:*
 
+- [ ] Describe the relationship between tables, rows and columns
 - [ ] Interact with the PSQL command line
 - [ ] Create and DELETE a database
 - [ ] Create and DELETE a table
 - [ ] Insert, retrieve, update, and delete a row or rows into a database table
-- [ ] Describe the relationship between tables, rows and columns
 
 ### Preparation
 *Before this lesson, students should already be able to:*
