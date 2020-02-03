@@ -129,7 +129,7 @@ Now that we have a database, let's create a table (think of this like, "hey now 
 1. Fields should *always* be lowercase
 2. SQL _keywords_ SHOULD ALWAYS BE IN CAPS 
 2. Never name a field `id`; always correlate it to the table name (e.g. `student_id`).
-3. Always check your company's style guide, or follow the convention; never create your own style.
+3. Always follow the SQL convention, or check your company's style guide; never create your own style.
 
 ```sql
 CREATE TABLE instructors (
@@ -179,7 +179,7 @@ Now that we're keeping track of our instructors, let's create a table for studen
 
 Remembering the commands we just went over, students, try to guide the instructors through this!  
 
-<details><summary>Here's what that query should have looked like</summary>
+<details><summary>Here's what that table schema should look like.</summary>
 
 
 
