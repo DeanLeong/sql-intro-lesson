@@ -444,8 +444,8 @@ Here are a list of some common Postgresql commands that you might need:
 
 - `\c` - connect to database
 - `\l` - list all DBs
-- `\d` - list all tables in current database
-- `\d` - list details
+- `\d` - to view the schema of a table
+- `\d+` - to view more detailed information on a table
 - `\q` - exit psql
 - `\h` - help
 
