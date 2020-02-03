@@ -1,7 +1,7 @@
 
 -- In case students need to catchup from earlier in the lesson:
 
-CREATE DATABASE wdi;
+CREATE DATABASE sei;
 
 CREATE TABLE instructors (
 instructor_id  SERIAL  PRIMARY KEY  NOT NULL,
