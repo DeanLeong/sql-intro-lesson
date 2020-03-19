@@ -419,7 +419,7 @@ Using the same database from above, get through as many of these SQL challenges 
 
 ## Break - 5 minutes
 
-## Lab: [SQL Car Lab](https://git.generalassemb.ly/sei-nyc-blizzard/sql-cars-lab)
+## Lab: [SQL Car Lab](https://git.generalassemb.ly/sei-nyc-mandalorians/sql-cars-lab)
     
 
 ## Conclusion - 5 minutes
