@@ -128,12 +128,11 @@ Now that we have a database, let's create a table (think of this like, "hey now 
 #### SQL style guide (see http://www.sqlstyle.guide)
 1. Fields should *always* be lowercase
 2. SQL _keywords_ SHOULD ALWAYS BE IN CAPS 
-2. Never name a field `id`; always correlate it to the table name (e.g. `student_id`).
 3. Always follow the SQL convention, or check your company's style guide; never create your own style.
 
 ```sql
 CREATE TABLE instructors (
-  instructor_id SERIAL PRIMARY KEY NOT NULL,
+  id SERIAL PRIMARY KEY NOT NULL,
   name TEXT NOT NULL,
   experience INT NOT NULL,
   website VARCHAR(50)
@@ -144,9 +143,9 @@ When we paste this into psql:
 
 ```psql
 sei=# CREATE TABLE instructors (
-sei(#  instructor_id  SERIAL PRIMARY KEY   NOT NULL,
-sei(#  name           TEXT          NOT NULL,
-sei(#  experience     INT           NOT NULL,
+sei(#  id             SERIAL PRIMARY KEY   NOT NULL,
+sei(#  name           TEXT                 NOT NULL,
+sei(#  experience     INT                  NOT NULL,
 sei(#  website        CHAR(50)
 sei(#  );
 CREATE TABLE
@@ -160,11 +159,11 @@ sei=# CREATE TABLE instructors (
 This starts our table creation, it tells PostgreSQL to create a table named "instructors"..
 
 ```psql
-sei(#  instructor_id        SERIAL   PRIMARY KEY   NOT NULL,
-sei(#  name      TEXT                NOT NULL,
+sei(#  id        SERIAL PRIMARY KEY   NOT NULL,
+sei(#  name      TEXT                 NOT NULL,
 ```
 
-...then, each line after denotes a new column we're going to create for this table, what the column will be called, the data type, whether it's a primary key, and whether the database - when data is added - can allow data without missing values.  In this case, we're not allowing `name`, `instructor_id` to be blank; but we're ok with `website` being blank.
+...then, each line after denotes a new column we're going to create for this table, what the column will be called, the data type, whether it's a primary key, and whether the database - when data is added - can allow data without missing values.  In this case, we're not allowing `name`, `id` to be blank; but we're ok with `website` being blank.
 
 > Read up on PSQL datatypes [here](https://www.postgresql.org/docs/10/static/datatype.html)  
 
@@ -185,7 +184,7 @@ Remembering the commands we just went over, students, try to guide the instructo
 
 ```sql
 CREATE TABLE students (
-  student_id SERIAL PRIMARY KEY NOT NULL,
+          id SERIAL PRIMARY KEY NOT NULL,
         name TEXT NOT NULL,
          age INT NOT NULL,
      address VARCHAR(50)
@@ -193,17 +192,6 @@ CREATE TABLE students (
 ```
 </details>
 
-In psql that will look like:
-
-```psql
-sei=# CREATE TABLE students (
-sei(#  student_id  SERIAL   PRIMARY KEY   NOT NULL,
-sei(#  name        TEXT                NOT NULL,
-sei(#  age         INT                 NOT NULL,
-sei(#  address     VARCHAR(50)
-sei(#  );
-CREATE TABLE
-```
 Great job! Now let's finally _insert_ some data into that table - remember what cannot be left blank!
 
 We'll insert five students, Jack, Jill, John, Jackie, and Slagathorn. The syntax is as follows:
@@ -217,12 +205,7 @@ Let's do it for Jack, together:
 ```sql
 INSERT INTO students VALUES (DEFAULT, 'Jack Sparrow', 28, '50 Main St, New York, NY');
 ```
-In psql that will look like:
 
-```psql
-sei=# INSERT INTO students VALUES (DEFAULT, 'Jack Sparrow', 28, '50 Main St, New York, NY');
-INSERT 0 1
-```
 
 ## Insert Data - Independent Practice
 
@@ -233,7 +216,7 @@ Now, you try it for the other students, and pay attention to the order of Jack's
 - Jackie's full name is Jackie Lackie; she's 101 years old, and lives at 2 OldForThis Ct, Fivetowns, NY
 - Slagathorn's full name is Slaggy McRaggy; he's 28 and prefers not to list his address
 
-You should come up with:
+<details><summary>Here's what the insert commands should look like.</summary>
 
 ```sql
 INSERT INTO students VALUES (DEFAULT, 'Jilly Cakes', 30, '123 Webdev Dr. Boston, MA');
@@ -242,20 +225,7 @@ INSERT INTO students VALUES (DEFAULT, 'Jackie Lackie', 101, '2 OldForThis Ct, Fi
 INSERT INTO students VALUES (DEFAULT, 'Slaggy McRaggy', 28);
 ```
 
-In psql this should look like:
-
-```psql
-sei=# INSERT INTO students VALUES (DEFAULT, 'Jilly Cakes', 30, '123 Webdev Dr. Boston, MA');
-INSERT 0 1
-sei=# INSERT INTO students VALUES (DEFAULT, 'Johnny Bananas', 25, '555 Five St, Fivetowns, NY');
-INSERT 0 1
-sei=# INSERT INTO students VALUES (DEFAULT, 'Jackie Lackie', 101, '2 OldForThis Ct, Fivetowns, NY');
-INSERT 0 1
-sei=# INSERT INTO students VALUES (DEFAULT, 'Slaggy McRaggy', 28);
-INSERT 0 1
-```
-
-## BREAK!
+</details>
 
 ## What's in our database?
 
@@ -401,7 +371,7 @@ sei=# SELECT * FROM students;
 
 ```
 
-## Independent Practice
+## We Do:
 
 Using the same database from above, get through as many of these SQL challenges as you can.
 
@@ -417,12 +387,7 @@ Using the same database from above, get through as many of these SQL challenges 
 - Get a list of students whose first name begins with the letter "J"
 - Get a list of student names who live in NY or MA
 
-## Break - 5 minutes
-
-## Lab: [SQL Car Lab](https://git.generalassemb.ly/sei-nyc-mandalorians/sql-cars-lab)
-    
-
-## Conclusion - 5 minutes
+## Conclusion 
 
 We will learn later on to relate our DB usage into backend services. 
 SQL gives us a fast and reliable way to access data in a structured and logical way.
