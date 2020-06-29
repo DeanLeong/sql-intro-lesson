@@ -173,8 +173,8 @@ Now that we're keeping track of our instructors, let's create a table for studen
 
 - an id that cannot be left blank
 - the students name that cannot be left blank
-- their age
-- and their address that cannot be left blank.
+- their age that cannot be left blank
+- and their address
 
 Remembering the commands we just went over, students, try to guide the instructors through this!  
 
