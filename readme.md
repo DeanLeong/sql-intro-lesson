@@ -5,7 +5,6 @@
 ### Objectives
 *After this lesson, students will be able to:*
 
-- [ ] Describe the relationship between tables, rows and columns
 - [ ] Interact with the PSQL command line
 - [ ] Create and DELETE a database
 - [ ] Create and DELETE a table
@@ -381,6 +380,20 @@ Using the same database from above, get through as many of these SQL challenges 
   - David Daniele is 28 and lives at 300 Dannington Ln., Washington, DC.
   - Greg Fitzgerald is 25 and did not list an address
   - Randi Fitz is 28 and lives in Oceanside, NY
+
+<details>
+<summary>If you feel comfortable with inserting data, here's the code to add the five students</summary>
+
+```sql
+INSERT INTO students
+VALUES (DEFAULT, 'Nancy Gong', 40, '200 Horton Ave., Lynbrook, NY'),
+(DEFAULT, 'Laura Rossi', 70, 'Unlisted'),
+(DEFAULT, 'David Daniele', 28, '300 Dannington Ln., Washington, DC.'),
+(DEFAULT, 'Greg Fitzgerald', 25),
+(DEFAULT, 'Randi Fitz', 28, 'Oceanside, NY'),
+```
+
+</details>
 
 - Randi wants her address to be corrected to 25 Broadway, New York, NY
 - Get a list of student names and addresses who are older than 30 and order them by their address alphabetically
