@@ -355,7 +355,7 @@ sei=# SELECT * FROM students;
 But wait, actually, she just cancelled - no big!
 
 ```psql
-sei=# DELETE FROM students where name = 'Miss Take';
+sei=# DELETE FROM students WHERE name = 'Miss Take';
 DELETE 1
 
 sei=# SELECT * FROM students;
@@ -390,7 +390,7 @@ VALUES (DEFAULT, 'Nancy Gong', 40, '200 Horton Ave., Lynbrook, NY'),
 (DEFAULT, 'Laura Rossi', 70, 'Unlisted'),
 (DEFAULT, 'David Daniele', 28, '300 Dannington Ln., Washington, DC.'),
 (DEFAULT, 'Greg Fitzgerald', 25),
-(DEFAULT, 'Randi Fitz', 28, 'Oceanside, NY'),
+(DEFAULT, 'Randi Fitz', 28, 'Oceanside, NY');
 ```
 
 </details>
