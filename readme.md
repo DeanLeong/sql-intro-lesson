@@ -18,19 +18,19 @@
 
 ## What are Databases?
 
-A database is a place where information gets stored in a hard drive - or distributed across multiple hard drives - on a computer somewhere. Much like we've been creating and storing data, here and there, a database represents a collection of individual pieces of data stored in a highly structured and searchable way; they are able to represent a model of reality.
+A database is a place where information gets stored in a hard drive - or distributed across multiple hard drives - on a computer somewhere. In our development environment, the database is a system file on our computer that we typically do not see or directly modify.
 
-Inside a database, we do basic actions like create, read, update, and destroy data – these operataions are commonly refered to by the acronym CRUD and are essential to modern web development.
+It's important to note that the development database is **not** a part of our code. This means that whenever we deploy an app to the "internet" or rather a hosting server, we do not send the data that is inside of our database. 
 
-In modern web development, there are different categories of databases primarily SQL and NoSQL. We're focusing on SQL because it's a more general and robust solution.
-
-SQL stands for Structured Query Language, and it's a language used to manage and get information from what are considered "relational" databases.
+In modern web development, there are different categories of databases: primarily SQL and NoSQL. SQL stands for Structured Query Language, and it's a language used to manage and get information from what are considered "relational" databases.
 
 Wikipedia on relational databases:
 >This model organizes data into one or more tables (or "relations") of columns and rows, with a unique key identifying each row. Rows are also called records or tuples.[3] Columns are also called attributes. Generally, each table/relation represents one "entity type" (such as customer or product). The rows represent instances of that type of entity (such as "Lee" or "chair") and the columns representing values attributed to that instance (such as address or price). -[wikipedia](https://en.wikipedia.org/wiki/Relational_database)
 
 
 [About Databases Blog Post](https://medium.com/@rwilliams_bv/intro-to-databases-for-people-who-dont-know-a-whole-lot-about-them-a64ae9af712)
+
+#### Example of a SQL Table:
 
 ![relational db](https://cloud.githubusercontent.com/assets/25366/8589355/2646c588-25ca-11e5-9f2d-3d3afe8b7817.png)
 
@@ -60,7 +60,7 @@ Well, a database is just a repository to store the data and you need to use syst
 - SQLite
 - PostgreSQL (what we'll be using!)
 
-...and all of these management systems use SQL (or some adaptation of it) as a language to manage data in the system.
+...and all of these management systems use SQL (or some adaptation of it) as a language to manage data in the system. It's worth noting that most DMS largely work the exact same way with some minor differences. Learning one will bring you a long way towards learning all of them.
 
 
 ## Connect, Create a Database - Codealong
